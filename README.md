@@ -1,44 +1,42 @@
 # DFO Opleidingen — website
 
-Statische website voor het opleidingsportaal van Bureau DFO (homepage + trainerspagina).
-Geen build-stap nodig: het zijn losse HTML-bestanden met afbeeldingen.
+Statische website voor het opleidingsportaal van Bureau DFO. Geen build-stap: losse HTML-bestanden met afbeeldingen.
 
-## Structuur
+## Belangrijk: alle bestanden in de ROOT (geen submappen)
+
+Deze versie is gemaakt voor GitHub Pages op een subpad (bijv. `https://jeroen-o.github.io/dfo-opleidingen/`).
+Daarom staan **alle bestanden plat in de hoofdmap** en gebruiken de pagina's relatieve paden
+zonder map (`monique-londema.jpg`, `logo-dfo.png`). Zo werkt het ongeacht het subpad.
 
 ```
-/
-├─ index.html              → de homepage (dfo-opleidingen.nl)
-├─ trainers/
-│  └─ index.html           → de trainerspagina (dfo-opleidingen.nl/trainers)
-├─ fotos/                  → pasfoto's van de trainers (voornaam-achternaam.jpg)
-├─ logo-dfo.png            → logo in de header
-├─ favicon.png             → tabblad-icoon
-├─ llms.txt                → AI-/zoekvindbaarheid (in de root van het domein houden)
-├─ README.md               → dit bestand
-└─ _intern/
-   └─ beheerdershandleiding.html  → NIET online plaatsen; interne uitleg
+index.html         → de homepage
+trainers.html      → de trainerspagina
+*.jpg              → alle trainersfoto's (los in de root!)
+logo-dfo.png       → logo in de header
+favicon.png        → tabblad-icoon
+llms.txt           → AI-/zoekvindbaarheid
+README.md          → dit bestand
+beheerdershandleiding.html → interne uitleg (eventueel verwijderen voor productie)
 ```
 
-## Publiceren via GitHub Pages
+## Uploaden naar GitHub (de juiste manier)
 
-1. Maak een repository en upload de inhoud van deze map (sleep alle bestanden + mappen in GitHub).
-2. Ga naar **Settings → Pages** en kies de branch (meestal `main`) met map `/ (root)`.
-3. De site komt online op `https://<gebruiker>.github.io/<repo>/`.
-   - Homepage: `…/`
-   - Trainers: `…/trainers/`
-4. Eigen domein koppelen kan via **Settings → Pages → Custom domain**.
+1. Sleep **alle losse bestanden** (niet een map eromheen) in je repository.
+2. Settings → Pages → branch `main`, map `/ (root)` → Save.
+3. Online op:
+   - Homepage: `https://<gebruiker>.github.io/<repo>/`
+   - Trainers: `https://<gebruiker>.github.io/<repo>/trainers.html`
 
-> Let op: de map `_intern/` bevat de beheerdershandleiding. Verwijder die map als je
-> niet wilt dat hij (theoretisch) online benaderbaar is, of bewaar de handleiding buiten de repo.
+> Veelgemaakte fout: een map (zoals `fotos/`) meeslepen terwijl de pagina's de foto's in de root
+> verwachten. In deze versie staan alle foto's bewust **plat in de root** — houd dat zo.
 
-## Een trainer/foto wijzigen
+## Foto's / trainers wijzigen
 
-- Foto's: zet een vierkant `.jpg`-bestand in `fotos/` met de naam `voornaam-achternaam.jpg`
-  (kleine letters, geen accenten, koppeltekens). Bestaat de foto niet, dan toont de kaart
-  automatisch de initialen.
-- Trainersgegevens staan in de lijst `const trainers = [ … ]` onderin **beide** HTML-bestanden.
-  Wijzig een trainer in zowel `index.html` als `trainers/index.html`, zodat ze gelijk blijven.
-- Zie `_intern/beheerdershandleiding.html` voor de volledige uitleg.
+- Foto toevoegen: zet een vierkant `.jpg` in de root met de naam `voornaam-achternaam.jpg`
+  (kleine letters, geen accenten, koppeltekens). Ontbreekt de foto, dan toont de kaart de initialen.
+  (Linda Vervloet heeft nog geen foto → toont initialen tot `linda-vervloet.jpg` wordt toegevoegd.)
+- Trainersgegevens staan in `const trainers = [ … ]` onderin **beide** bestanden
+  (`index.html` én `trainers.html`). Wijzig ze in allebei zodat ze gelijk blijven.
 
 ## Let op (AFM/compliance)
 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beheerdershandleiding — DFO-opleidingen pagina's</title>
+<style>
+  :root{--blauw:#235BA8;--blauw-diep:#143560;--accent:#f39200;--accent-d:#d97f00;--tekst:#23292f;--grijs:#5c6573;--lijn:#e1e7ef;--bg-grijs:#f5f7fa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--tekst);line-height:1.6;background:#fff;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+  header{background:linear-gradient(120deg,var(--blauw-diep),var(--blauw));color:#fff;padding:34px 0;}
+  header .eyebrow{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#ffce80;margin-bottom:8px;}
+  header h1{font-size:30px;letter-spacing:-.5px;}
+  header p{color:#e3edf9;font-size:15.5px;margin-top:6px;}
+  .printbtn{margin-top:16px;background:var(--accent);color:#fff;border:0;font-weight:700;font-size:14px;padding:11px 20px;border-radius:8px;cursor:pointer;font-family:inherit;}
+  .printbtn:hover{background:var(--accent-d);}
+  main{padding:36px 0 60px;}
+  h2{color:var(--blauw);font-size:21px;margin:30px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--lijn);}
+  h2 .n{display:inline-flex;width:28px;height:28px;background:var(--blauw);color:#fff;border-radius:7px;align-items:center;justify-content:center;font-size:15px;margin-right:10px;}
+  h3{color:var(--blauw);font-size:16px;margin:20px 0 8px;}
+  p{margin-bottom:10px;font-size:15px;}
+  ul{margin:0 0 12px 22px;font-size:15px;}
+  li{margin-bottom:6px;}
+  code{background:var(--bg-grijs);border:1px solid var(--lijn);border-radius:4px;padding:1px 6px;font-family:'Consolas',monospace;font-size:13.5px;color:#b03a00;}
+  pre{background:#0f2440;color:#e6edf6;border-radius:10px;padding:16px 18px;overflow-x:auto;font-family:'Consolas',monospace;font-size:13px;line-height:1.55;margin:10px 0 16px;}
+  pre .c{color:#7fa7d8;}
+  pre .s{color:#ffce80;}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 16px;}
+  th{background:var(--blauw);color:#fff;text-align:left;padding:9px 11px;}
+  td{padding:9px 11px;border-bottom:1px solid var(--lijn);vertical-align:top;}
+  tr:nth-child(even) td{background:var(--bg-grijs);}
+  .box{border-radius:10px;padding:14px 16px;margin:14px 0;font-size:14px;}
+  .tip{background:#eaf1fa;border:1px solid #c7dbf2;color:#1b4884;}
+  .warn{background:#fff8e8;border:1px solid #f0d999;color:#7a5d12;}
+  .file{font-family:'Consolas',monospace;font-size:13.5px;color:var(--blauw);font-weight:700;}
+  footer{border-top:1px solid var(--lijn);padding:18px 0;font-size:12.5px;color:var(--grijs);text-align:center;}
+  @media print{header{background:var(--blauw)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.printbtn{display:none;}h2 .n,th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}pre{background:#0f2440!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Beheerdershandleiding · Bureau DFO</div>
+    <h1>Opleidingen- &amp; trainerspagina's beheren</h1>
+    <p>Hoe je de bestanden plaatst, foto's toevoegt en trainers wijzigt — zonder technische kennis.</p>
+    <button class="printbtn" onclick="printDoc()">Print / opslaan als PDF</button>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <h2><span class="n">1</span>De bestanden</h2>
+  <p>Je hebt drie pagina's en één tekstbestand gekregen. Plaats ze als volgt:</p>
+  <table>
+    <tr><th>Bestand</th><th>Wordt</th><th>Plaats</th></tr>
+    <tr><td class="file">dfo-opleidingen-home.html</td><td>de homepage</td><td>hernoem naar <code>index.html</code></td></tr>
+    <tr><td class="file">dfo-trainers.html</td><td>de pagina <code>/trainers</code></td><td>map <code>/trainers/</code> als <code>index.html</code></td></tr>
+    <tr><td class="file">llms.txt</td><td>AI-vindbaarheid</td><td>in de hoofdmap (root) van het domein</td></tr>
+  </table>
+  <div class="box tip"><strong>Tip:</strong> houd beide HTML-pagina's en de map <code>fotos/</code> op dezelfde locatie, zodat de onderlinge links en foto's blijven werken.</div>
+
+  <h2><span class="n">2</span>Afbeeldingen uploaden</h2>
+  <p>De pagina's verwijzen naar een paar afbeeldingen. Zolang die er niet zijn, toont de pagina automatisch een nette terugval (logo wordt tekst, foto's worden initialen). Upload deze bestanden <strong>naast</strong> de HTML-pagina's:</p>
+  <table>
+    <tr><th>Bestandsnaam</th><th>Wat</th><th>Formaat</th></tr>
+    <tr><td class="file">logo-dfo.png</td><td>het DFO-logo in de header</td><td>liggend, ~hoogte 88px (2×)</td></tr>
+    <tr><td class="file">favicon.png</td><td>het tabblad-icoontje</td><td>vierkant, 64×64 px</td></tr>
+    <tr><td class="file">og-dfo.jpg</td><td>deelafbeelding homepage (social)</td><td>1200×630 px</td></tr>
+    <tr><td class="file">og-trainers.jpg</td><td>deelafbeelding trainerspagina</td><td>1200×630 px</td></tr>
+  </table>
+
+  <h3>Trainersfoto's</h3>
+  <p>Maak een map <code>fotos/</code> naast de pagina's en zet daar de pasfoto's in. De bestandsnaam is steeds <strong>voornaam-achternaam</strong> in kleine letters, zonder accenten, met koppeltekens — en eindigt op <code>.jpg</code>. Voorbeelden:</p>
+  <ul>
+    <li><code>fotos/monique-londema.jpg</code></li>
+    <li><code>fotos/rene-kuiper.jpg</code></li>
+    <li><code>fotos/jurjen-oosterbaan-martinius.jpg</code></li>
+    <li><code>fotos/joost-schipaanboord.jpg</code></li>
+  </ul>
+  <div class="box tip"><strong>Tip:</strong> gebruik vierkante foto's (bijvoorbeeld 400×400 px). Ze worden bovenaan uitgesneden, dus zorg dat het gezicht in het bovenste deel staat. Bestaat een foto nog niet, dan toont de kaart automatisch de initialen — er gaat dus nooit iets "stuk".</div>
+  <div class="box warn"><strong>Let op:</strong> gebruik geen LinkedIn-foto's rechtstreeks. Die links verlopen en mogen niet zonder toestemming worden hergebruikt. Gebruik een eigen pasfoto die de trainer heeft aangeleverd.</div>
+
+  <h2><span class="n">3</span>Een trainer wijzigen of toevoegen</h2>
+  <p>Alle trainers staan in <strong>één lijst</strong> onderin elk HTML-bestand. Open de pagina in een teksteditor (bijv. Kladblok, VS Code) en zoek op het woord <code>const trainers</code>. Elke trainer is één blok tussen accolades <code>{ }</code>:</p>
+  <pre><span class="c">// voorbeeld van één trainer in de lijst</span>
+{
+  naam:<span class="s">"Monique Londema"</span>,
+  foto:<span class="s">"fotos/monique-londema.jpg"</span>,
+  linkedin:<span class="s">"https://www.linkedin.com/in/..."</span>,   <span class="c">// optioneel</span>
+  opleiding:{label:<span class="s">"Leergang Hypothecair Planner"</span>,
+             url:<span class="s">"https://www.dfo-opleidingen.nl/..."</span>}, <span class="c">// optioneel</span>
+  cat:[<span class="s">"hypotheken"</span>],            <span class="c">// bepaalt onder welke filter(s) hij/zij valt</span>
+  rol:<span class="s">"Opleider hypotheken"</span>,
+  desc:<span class="s">"Korte omschrijving van wat deze trainer doet."</span>,
+  quote:<span class="s">""</span>,                    <span class="c">// optioneel citaat; leeg = geen citaat</span>
+  tags:[<span class="s">"Hypotheken"</span>,<span class="s">"Planning"</span>]
+},</pre>
+
+  <h3>Veld voor veld</h3>
+  <table>
+    <tr><th>Veld</th><th>Betekenis</th></tr>
+    <tr><td><code>naam</code></td><td>volledige naam (bepaalt ook de foto-bestandsnaam en initialen)</td></tr>
+    <tr><td><code>foto</code></td><td>pad naar de foto; leeg laten (<code>""</code>) = initialen</td></tr>
+    <tr><td><code>linkedin</code></td><td>profiel-URL; weglaten = geen LinkedIn-icoon</td></tr>
+    <tr><td><code>opleiding</code></td><td>label + link naar de opleiding; weglaten = link naar "geplande opleidingen"</td></tr>
+    <tr><td><code>cat</code></td><td>één of meer filtercategorieën (zie hieronder). Leeg <code>[]</code> = alleen in "Alle trainers"</td></tr>
+    <tr><td><code>rol</code></td><td>functie/specialisme (de oranje regel op de kaart)</td></tr>
+    <tr><td><code>desc</code></td><td>omschrijving</td></tr>
+    <tr><td><code>quote</code></td><td>optioneel citaat</td></tr>
+    <tr><td><code>tags</code></td><td>de kleine labels onderaan; tellen ook mee in de zoekfunctie</td></tr>
+  </table>
+
+  <h3>Beschikbare categorieën (<code>cat</code>)</h3>
+  <p>Gebruik exact deze woorden: <code>hypotheken</code>, <code>schade</code>, <code>inkomen</code>, <code>ai</code>, <code>kwaliteit</code>, <code>juridisch</code>. Een trainer mag meerdere categorieën hebben, bijv. <code>cat:["schade","juridisch"]</code>.</p>
+
+  <div class="box tip"><strong>Toevoegen:</strong> kopieer een bestaand blok (van <code>{</code> tot en met <code>},</code>), plak het in de lijst en pas de velden aan. Let op dat er een komma achter het blok staat. <strong>Verwijderen:</strong> haal het hele blok inclusief de afsluitende komma weg.</div>
+  <div class="box warn"><strong>Belangrijk:</strong> wijzig een trainer in <u>beide</u> bestanden (homepage én trainerspagina), zodat ze gelijk blijven. De lijst is in beide pagina's identiek.</div>
+
+  <h2><span class="n">4</span>Teksten &amp; contact aanpassen</h2>
+  <ul>
+    <li><strong>Contactgegevens</strong> (telefoon, e-mail, adres) staan in de topbar, het contactblok en de footer. Zoek op <code>opleidingen@dfobv.nl</code> of <code>033 258 0460</code>.</li>
+    <li><strong>Testimonials</strong> (cursistervaringen): zoek op <code>class="testi"</code>. Vervang naam, bedrijf en tekst. Het derde testimonial is nog algemeen — vul hier een echte cursist in.</li>
+    <li><strong>FAQ</strong>: zoek op <code>class="faqitem"</code>. Pas vraag en antwoord aan. Werk je een FAQ-vraag bij, pas dan ook het <code>FAQPage</code>-schema bovenin de pagina aan (zoek op <code>FAQPage</code>) zodat Google dezelfde tekst ziet.</li>
+  </ul>
+
+  <h2><span class="n">5</span>Aandachtspunten</h2>
+  <div class="box warn"><strong>Google Maps &amp; cookies (AVG):</strong> de locatiekaart laadt een Google-iframe dat cookies kan plaatsen. Wil je strikt cookievrij zijn, vervang dan het kaartje door een afbeelding of alleen de "Plan uw route"-knop. Vraag dit aan de bouwer.</div>
+  <div class="box warn"><strong>Formulieren:</strong> "Stel uw vraag" en "Aanmelden als trainer" openen het e-mailprogramma van de bezoeker (geen opslag in een database). Dat werkt overal en bewaart geen gegevens op de site. Wil je echte formulier-opslag, dan is een koppeling met bijv. een formulierdienst nodig.</div>
+  <div class="box warn"><strong>AFM/compliance:</strong> de pagina claimt nergens hard dat een opleiding "meetelt voor PE". Houd dat zo: of punten meetellen hangt af van de erkenning (SEH/NVHP/FFP). Pas de PE-teksten alleen aan als dat per opleiding klopt.</div>
+  <div class="box tip"><strong>Inhoudelijk juist houden:</strong> de site is een opmaak-/landingsversie. Het inschrijven en de actuele opleidingsdata blijven op het bestaande portaal draaien; de knoppen linken daarnaartoe.</div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">Beheerdershandleiding · Opleidingsportaal Bureau DFO · De Wel 14–16, 3871 MV Hoevelaken · 033 258 0460 · opleidingen@dfobv.nl</div>
+</footer>
+
+<script>
+function printDoc(){
+  // window.open i.p.v. window.print() voor iframe-/embed-compatibiliteit
+  var w=window.open('','_blank');
+  if(!w){ window.print(); return; }
+  w.document.open();
+  w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Beheerdershandleiding DFO</title></head><body>'+document.querySelector('main').parentNode.innerHTML+'</body></html>');
+  w.document.close(); w.focus();
+  setTimeout(function(){ w.print(); },350);
+}
+</script>
+</body>
+</html>
